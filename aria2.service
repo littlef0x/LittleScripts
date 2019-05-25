@@ -3,9 +3,9 @@ Description=Aria2c download manager
 After=network.target
 
 [Service]
-Type=forking
-User=ubuntu
-Group=ubuntu
+Type=simple
+User=www-data
+Group=www-data
 ExecStart=/usr/bin/aria2c --conf-path=/home/ubuntu/.aria2/aria2.conf --daemon
 
 [Install]
