@@ -4,7 +4,6 @@ After=network.target
 
 [Service]
 Type=simple
-IgnoreSIGPIPE=no
 User=ubuntu
 Group=ubuntu
 ExecStart=/usr/bin/python3 /usr/local/serverstatus/client-linux.py

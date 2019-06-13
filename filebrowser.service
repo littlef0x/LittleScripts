@@ -1,8 +1,10 @@
 [Unit]
 Description=File Browser
+
 [Service]
 User=www-data
 Group=www-data
 ExecStart=/usr/local/bin/filebrowser -r /data -a 0.0.0.0 -d /etc/filebrowser/filebrowser.db
+
 [Install]
 WantedBy=multi-user.target
