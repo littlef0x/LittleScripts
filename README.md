@@ -2,7 +2,7 @@
 
 Some simple shell scripts, for my own use, and for fun!
 
-###aria2.conf
+### aria2.conf
 
 Aria2 config file based on Toyo's config
 
@@ -18,7 +18,7 @@ Aria2 dht cache file from Toyo
 
 Systemd service for aria2
 
-###seafile_autobackup.sh
+### seafile_autobackup.sh
 
 Backup seafile files and databases automatically in a single zip file
 
