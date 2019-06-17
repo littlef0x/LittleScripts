@@ -10,6 +10,10 @@ Aria2 config file based on Toyo's config
 
 Systemd service for aria2
 
+### caddy_uninstall.sh
+
+Uninstall caddy (default directory only)
+
 ### dht.dat
 
 Aria2 dht cache file from Toyo
