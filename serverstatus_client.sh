@@ -26,7 +26,7 @@ sudo mkdir /usr/local/serverstatus
 sudo wget --no-check-certificate -qP /usr/local/serverstatus 'https://raw.githubusercontent.com/cppla/ServerStatus/master/clients/client-linux.py'
 sudo sed -i "s/127.0.0.1/$server/" /usr/local/serverstatus/client-linux.py
 sudo sed -i "s/s01/$user/" /usr/local/serverstatus/client-linux.py
-sudo sed -i "s/USER_DEFAULT_PASSWOR/$password/" /usr/local/serverstatus/client-linux.py
+sudo sed -i "s/USER_DEFAULT_PASSWORD/$password/" /usr/local/serverstatus/client-linux.py
 sudo sed -i "s/argc.split('SERVER=')[-1]/socket.gethostbyname(argc.split('SERVER=')[-1])/" /usr/local/serverstatus/client-linux.py
 
 # get systemd service file
