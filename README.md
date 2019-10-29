@@ -22,6 +22,10 @@ Aria2 dht cache file from Toyo
 
 Systemd service for aria2
 
+### rclone_uninstall.sh
+
+Remove rclone
+
 ### seafile_autobackup.sh
 
 Backup seafile files and databases automatically in a single zip file
@@ -37,4 +41,8 @@ Systemd service for ServerStatus client
 ### serverstatus_client.sh
 
 Install ServerStatus client. Domain name support added.
+
+### ubuntu_init.sh
+
+Some basic setups for new ubuntu server. Test passed on 18.04.
 
