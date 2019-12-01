@@ -15,7 +15,7 @@ apt install vim wget curl lrzsz screen ufw -y
 function creatuser()
 {
 	useradd -m ubuntu -s /bin/bash
-	read -n 1 -p 'Password for ubuntu: ' pass
+	read -p 'Password for ubuntu: ' pass
 	echo $pass | passwd ubuntu --stdin  &>/dev/null
 	if [[ `grep 'ubuntu' /etc/sudoers` ]]; then
 		echo -e "\nubuntu ALL=(ALL) NOPASSWD: ALL\n" >> /etc/sudoers
@@ -38,15 +38,15 @@ fi
 timedatectl set-timezone Asia/Shanghai
 
 # import priv key for both root and ubuntu
-read -n 1 -p 'Pub key: ' pubkey
+read -p 'Pub key: ' pubkey
 mkdir ~/.ssh
 chmod 700 ~/.ssh
-echo $pubkey > ~/.ssh/authorized_keys
+echo "$pubkey" > ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 
 # add user ubuntu
 if [[ `grep ubuntu /etc/passwd` ]]; then
-	raad -n 1 -p 'User ubuntu already exists. Change its password? [y/n]' changepw
+	read -n 1 -p 'User ubuntu already exists. Change its password? [y/n]' changepw
 	if [[ "$changepw" == 'y' ]]; then
 		creatuser $pubkey
 	else
@@ -60,11 +60,11 @@ fi
 read -n 1 -p  'Please make sure that you can login using private keys. Enter to confirm. Others to cancel. ' loginconfirm
 if [[ "$loginconfirm" == '' ]]; then
 	if [[ `grep '^#PasswordAuthentication yes' /etc/ssh/sshd_config` ]]; then
-		sed -i "s/^#PasswordAuthentication yes/PasswordAuthentication no/g" /etc/ssh/shd_config
+		sed -i "s/^#PasswordAuthentication yes/PasswordAuthentication no/g" /etc/ssh/sshd_config
 	elif [[ `grep '^# PasswordAuthentication yes' /etc/ssh/sshd_config` ]]; then
-		sed -i "s/^# PasswordAuthentication yes/PasswordAuthentication no/g" /etc/ssh/shd_config
+		sed -i "s/^# PasswordAuthentication yes/PasswordAuthentication no/g" /etc/ssh/sshd_config
 	elif [[ `grep '^PasswordAuthentication yes' /etc/ssh/sshd_config` ]]; then
-		sed -i "s/^PasswordAuthentication yes/PasswordAuthentication no/g" /etc/ssh/shd_config
+		sed -i "s/^PasswordAuthentication yes/PasswordAuthentication no/g" /etc/ssh/sshd_config
 	else
 		echo 'No password configuration found. You need to change it manually.'
 	fi
@@ -74,7 +74,7 @@ else
 fi
 
 # configure ufw
-read -n 1 -p 'SSH port: ' port
+read -p 'SSH port: ' port
 read -n 1 -p "Your ssh port is $port. Enter to confirm. Others to cancel. " portconfirm
 if [[ $portconfirm == '' ]]; then
 	ufw allow $port/tcp
@@ -84,7 +84,7 @@ else
 fi
 
 # alias
-if [[ `grep 'custom alias' /etc/bash.bashrc ]]; then
+if [[ `grep 'custom alias' /etc/bash.bashrc` ]]; then
 	echo "# custom alias" >> /etc/bash.bashrc
 	echo "alias update-caddy='curl https://getcaddy.com | bash -s personal'" >> etc/bash.bashrc
 	echo "alias start='sudo systemctl start'" >> /etc/bash.bashrc
