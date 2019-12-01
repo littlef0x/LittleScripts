@@ -59,7 +59,15 @@ fi
 # disable password authentication
 read -n 1 -p  'Please make sure that you can login using private keys. Enter to confirm. Others to cancel. ' loginconfirm
 if [[ "$loginconfirm" == '' ]]; then
-	sed -i "s/^#PasswordAuthentication.*/PasswordAuthentication no/g" /etc/ssh/shd_config
+	if [[ `grep '^#PasswordAuthentication yes' /etc/ssh/sshd_config` ]]; then
+		sed -i "s/^#PasswordAuthentication yes/PasswordAuthentication no/g" /etc/ssh/shd_config
+	elif [[ `grep '^# PasswordAuthentication yes' /etc/ssh/sshd_config` ]]; then
+		sed -i "s/^# PasswordAuthentication yes/PasswordAuthentication no/g" /etc/ssh/shd_config
+	elif [[ `grep '^PasswordAuthentication yes' /etc/ssh/sshd_config` ]]; then
+		sed -i "s/^PasswordAuthentication yes/PasswordAuthentication no/g" /etc/ssh/shd_config
+	else
+		echo 'No password configuration found. You need to change it manually.'
+	fi
 	systemctl restart sshd
 else
 	echo 'Privkey import failed. Please check it manually.'
