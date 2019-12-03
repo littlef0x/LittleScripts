@@ -36,7 +36,7 @@ function aliases()
 # create user ubuntu
 function createuser()
 {
-	if [[ `grep 'ubuntu' /etc/sudoers` ]]; then
+	if [[ !`grep 'ubuntu' /etc/sudoers` ]]; then
 		echo -e "\nubuntu ALL=(ALL) NOPASSWD: ALL\n" >> /etc/sudoers
 	fi
 	if [[ ! -d /home/ubuntu/.ssh ]]; then
