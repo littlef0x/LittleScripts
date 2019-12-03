@@ -97,12 +97,12 @@ timedatectl set-timezone Asia/Shanghai
 
 # import priv key for both root and ubuntu
 read -r -p 'Pub key: ' pubkey
-addpubkey $pubkey
+addpubkey "$pubkey"
 
-if !id -u ubuntu >/dev/null 2>&1; then
+if [[ !`grep ubuntu /etc/passwd` ]]; then
 	useradd -m ubuntu -s /bin/bash
 fi
-createuser $pubkey
+createuser "$pubkey"
 
 # disable password authentication
 disablepasswordauth
