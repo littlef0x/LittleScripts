@@ -23,7 +23,7 @@ function addpubkey(){
 # aliases
 function aliases()
 {
-	if [[ `grep 'custom alias' /etc/bash.bashrc` ]]; then
+	if [[ !`grep 'custom alias' /etc/bash.bashrc` ]]; then
 		echo "# custom alias" >> /etc/bash.bashrc
 		echo "alias update-caddy='curl https://getcaddy.com | bash -s personal'" >> /etc/bash.bashrc
 		echo "alias start='sudo systemctl start'" >> /etc/bash.bashrc
