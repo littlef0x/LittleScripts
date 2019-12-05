@@ -13,4 +13,6 @@ sudo chmod 775 /etc/caddy && sudo chmod 775 /var/www && sudo chmod 775 /etc/ssl/
 sudo -u www-data touch /etc/caddy/Caddyfile
 
 # start caddy service
-sudo systemctl daemon-reload && sudo systemctl enable caddy
+sudo systemctl daemon-reload
+sudo systemctl enable caddy
+sudo systemctl start caddy
