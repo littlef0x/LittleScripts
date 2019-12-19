@@ -11,6 +11,7 @@ sudo usermod -aG ubuntu www-data && sudo usermod -aG www-data ubuntu
 sudo chown -R www-data:www-data /etc/caddy && sudo chown -R www-data:www-data /var/www && sudo chown -R www-data:www-data /etc/ssl/caddy
 sudo chmod 775 /etc/caddy && sudo chmod 775 /var/www && sudo chmod 775 /etc/ssl/caddy
 sudo -u www-data touch /etc/caddy/Caddyfile
+sudo chmod 664 /etc/caddy/Caddyfile
 
 # start caddy service
 sudo systemctl daemon-reload
