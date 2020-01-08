@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # install dependencies
-if command -v python >/dev/null 2>&1; then
+if command -v python3 >/dev/null 2>&1; then
 	true
 else
-	sudo apt install python
+	sudo apt install python3
 fi
 
 if command -v wget >/dev/null 2>&1; then

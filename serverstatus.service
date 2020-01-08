@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 User=ubuntu
 Group=ubuntu
-ExecStart=/usr/bin/python /usr/local/serverstatus/client-linux.py
+ExecStart=/usr/bin/python3 /usr/local/serverstatus/client-linux.py
 
 [Install]
 WantedBy=multi-user.target
