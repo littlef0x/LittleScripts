@@ -1,9 +1,13 @@
 #!/bin/bash
 
 # install caddy and caddy service
-curl https://getcaddy.com | bash -s personal
+#curl https://getcaddy.com | bash -s personal
+curl -fsSL -O https://github.com/littlef0x/LittleScripts/raw/master/caddy_v1.0.4_linux_amd64.tar.gz
+tar -xzf ./caddy_v1.0.4_linux_amd64.tar.gz caddy
+sudo mv -f ./caddy /usr/local/bin/caddy
+rm caddy_v1.0.4_linux_amd64.tar.gz
 sudo mkdir /etc/caddy && sudo mkdir /var/www && sudo mkdir /etc/ssl/caddy
-sudo curl -s https://raw.githubusercontent.com/mholt/caddy/master/dist/init/linux-systemd/caddy.service -o /etc/systemd/system/caddy.service
+sudo curl -s https://raw.githubusercontent.com/littlef0x/LittleScripts/master/caddyv1.service -o /etc/systemd/system/caddy.service
 
 # privilege
 sudo sed -i '/^ReadWriteDirectories=\/etc\/ssl\/caddy/a\ReadWriteDirectories=\/etc\/caddy\nReadWriteDirectories=\/var\/www' /etc/systemd/system/caddy.service
