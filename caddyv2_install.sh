@@ -2,9 +2,9 @@
 
 # install caddy and caddy service
 curl -fsSL -O https://github.com/caddyserver/caddy/releases/download/v2.0.0/caddy_2.0.0_linux_amd64.tar.gz
-tar -xzf ./caddy_2.0.0-rc.2_linux_amd64.tar.gz caddy
+tar -xzf ./caddy_2.0.0_linux_amd64.tar.gz caddy
 sudo mv -f ./caddy /usr/bin/caddy
-rm caddy*.tar.gz
+rm caddy_2.0.0_linux_amd64.tar.gz
 sudo mkdir /etc/caddy && sudo mkdir /var/www
 sudo curl -s https://raw.githubusercontent.com/littlef0x/LittleScripts/master/caddyv2.service -o /etc/systemd/system/caddy.service
 
