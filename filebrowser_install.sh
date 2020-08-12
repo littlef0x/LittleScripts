@@ -7,14 +7,14 @@ if [[ ! -d $displaydir ]]; then
 	sudo chown ubuntu:ubuntu $displaydir
 	sudo chmod 775 $displaydir
 fi
-sudo usermod -aG ubuntu www-data && sudo usermod -aG www-data ubuntu
+sudo usermod -aG ubuntu ubuntu && sudo usermod -aG ubuntu ubuntu
 
 # install filebrowser
 curl -fsSL https://filebrowser.xyz/get.sh | bash
 
 # create directory
 sudo mkdir /etc/filebrowser
-sudo chmod 775 /etc/filebrowser && sudo chown www-data:www-data /etc/filebrowser
+sudo chmod 775 /etc/filebrowser && sudo chown ubuntu:ubuntu /etc/filebrowser
 
 # start service
 sudo curl -s https://raw.githubusercontent.com/littlef0x/LittleScripts/master/filebrowser.service -o /etc/systemd/system/filebrowser.service

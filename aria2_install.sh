@@ -21,7 +21,7 @@ sed -i "s~domain~$domain~g" $aria2confdir/aria2.conf
 
 # start aria2 service
 sudo curl -s https://raw.githubusercontent.com/littlef0x/LittleScripts/master/aria2.service -o /etc/systemd/system/aria2.service
-sudo chown -R www-data:www-data $aria2confdir
+sudo chown -R ubuntu:ubuntu $aria2confdir
 sudo systemctl daemon-reload
 sudo systemctl enable aria2
 sudo systemctl start aria2
