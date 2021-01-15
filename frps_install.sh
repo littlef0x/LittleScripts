@@ -18,4 +18,5 @@ sudo systemctl daemon-reload
 sudo systemctl enable frps
 cd ..
 rm -rf `ls -F | grep '/$' | grep frp`
+rm frp.tar.gz
 echo 'Installation completed. Now you can edit /etc/frp/frps.ini and then start the service.'
