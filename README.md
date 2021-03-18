@@ -2,47 +2,142 @@
 
 Some simple shell scripts, for my own use, and for fun!
 
-### aria2.conf
+⚠ Most scripts here only work on Ubuntu 18.04+.
 
-Aria2 config file based on Toyo's config
+⚠ Bugs everywhere. Use them at your own risk.
 
-### aria2.service
 
-Systemd service for aria2
 
-### caddy_uninstall.sh
+### aria2
 
-Uninstall caddy (default directory only)
+##### aria2.conf
 
-### dht.dat
+Aria2 config file based on Toyo's config.
 
-Aria2 dht cache file from Toyo
+##### aria2.service
 
-### filebrowser.service
+Systemd service for aria2.
 
-Systemd service for aria2
+##### aria2_install.sh
 
-### rclone_uninstall.sh
+Install aria2 via apt.
 
-Remove rclone
+##### dht.dat
 
-### seafile_autobackup.sh
+Aria2 dht cache file from Toyo.
 
-Backup seafile files and databases automatically in a single zip file
 
-### seafile_autosync.sh
 
-Sync the backup file of seafile automatically to external storage, e.g. Onedrive
+### Caddy
 
-### serverstatus.service
+⚠ Caddy v1 has reached EOL. Use Caddy 2 if possible.
 
-Systemd service for ServerStatus client
+##### caddy_linux_amd64
 
-### serverstatus_client.sh
+Backup of Caddy 1.0.5 compiled by Teddysun.
+
+##### caddy_uninstall.sh
+
+Uninstall caddy v1 (default directory only).
+
+##### caddy_v1.0.4_linux_amd64.tar.gz
+
+Backup of Caddy 1.0.4.
+
+##### caddyv1.service
+
+Systemd service for Caddy v1.
+
+##### caddyv1_install.sh
+
+Install Caddy v1.
+
+##### caddyv2.service
+
+Systemd service for Caddy 2.
+
+⚠ Deprecated: Use the official way instead.
+
+##### caddyv2_install.sh
+
+Install Caddy 2.
+
+⚠ Deprecated: Use the official way instead.
+
+
+
+### Filebrowser
+
+##### filebrowser.service
+
+Systemd service for filebrowser.
+
+##### filebrowser_install.sh
+
+Install filebrowser.
+
+
+
+### frp
+
+##### frpc_install.sh
+
+Install frp client.
+
+##### frps_install.sh
+
+Install frp server.
+
+
+
+### backup & sync
+
+##### nextcloud_autobackup.sh
+
+Backup nextcloud data automatically.
+
+##### seafile_autobackup.sh
+
+Backup seafile files and databases automatically in a single zip file.
+
+##### seafile_autosync.sh
+
+Sync the backup file of seafile automatically to external storage, e.g. Onedrive.
+
+##### rclone_uninstall.sh
+
+Remove rclone.
+
+
+
+### server probe
+
+##### serverstatus.service
+
+Systemd service for ServerStatus client.
+
+##### serverstatus_client.sh
 
 Install ServerStatus client. Domain name support added.
 
-### ubuntu_init.sh
+##### serverstatus_uninstall.sh
 
-Some basic setups for new ubuntu server. Test passed on 18.04.
+Remove ServerStatus client.
 
+
+
+### server maintenance
+
+##### lastlog.sh
+
+Analysis failed logins attempts.
+
+##### remove_unused_kernel.sh
+
+Removed kernels except the latest one and used one.
+
+⚠ Bug Warning: Unexpected behavior in certain environment. Fix needed.
+
+##### ubuntu_init.sh
+
+Some basic setups for new ubuntu server.
