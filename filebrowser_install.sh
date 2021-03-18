@@ -11,7 +11,7 @@ fi
 sudo usermod -aG ubuntu ubuntu && sudo usermod -aG ubuntu ubuntu
 
 # install filebrowser
-curl -fsSL https://filebrowser.xyz/get.sh | bash
+curl -fsSL https://filebrowser.org/get.sh | bash
 
 # create directory
 sudo mkdir /etc/filebrowser
