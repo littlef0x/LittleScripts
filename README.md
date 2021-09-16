@@ -140,4 +140,16 @@ Removed kernels except the latest one and used one.
 
 ##### ubuntu_init.sh
 
-Some basic setups for new ubuntu server.
+Some basic setups for new ubuntu server, including:
+
+- Upgrade packages.
+- Remove silly vim-tiny & install vim, wget, curl, lrzsz, and screen.
+- Set time zone to Asia/Shanghai.
+- Add pub key authentication & disable password authentication.
+- Create user 'ubuntu' with the same key.
+- Activate TCP-BBR.
+- Install and enable UFW & add SSH rule (with custom port support).
+
+⚠ You need to add rules manually to make other ports accessible.
+
+- Add some custom aliases.
