@@ -89,7 +89,7 @@ fi
 apt update -y
 apt upgrade -y
 apt purge vim-tiny -y
-apt install vim wget curl lrzsz screen ufw -y
+apt install vim wget curl lrzsz screen ufw iotop iftop htop nethogs -y
 
 # change time zone
 timedatectl set-timezone Asia/Shanghai
